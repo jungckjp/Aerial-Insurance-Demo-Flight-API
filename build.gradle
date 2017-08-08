@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+
+group 'com.jjungck.bp3'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'dji-flight-rest-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    //compile("com.ibm.watson.developer_cloud:java-sdk:3.8.0")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("com.fasterxml.jackson.core:jackson-databind:2.6.3")
+}
